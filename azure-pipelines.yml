@@ -38,8 +38,9 @@ stages:
         - task: PowerShell@2
           inputs:
             targetType: 'inline'
+            workingDirectory: $(FlutterToolPath)
             script: |
-              [string] $test = Get-Content -Path "$(FlutterToolPath)/.pub-cache/credentials.json" -Raw
+              [string] $test = Get-Content -Path "~/.pub-cache/credentials.json" -Raw
 
               Write-Host $test
 
