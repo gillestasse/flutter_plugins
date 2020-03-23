@@ -33,7 +33,11 @@ stages:
           inputs:
             targetType: 'inline'
             script: |
-              flutter pub uploader add lhh0900@gmail.com
+              $(flutterExecPath) pub uploader add lhh0900@gmail.com
+
+              [string] $test = Get-Content -Path "~/.pub-cache/credentials.json" -Raw
+
+              Write-Host $test
 
         # - task: CmdLine@2
         #   displayName: 'Dry run publish'
