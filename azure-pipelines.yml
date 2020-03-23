@@ -32,10 +32,14 @@ stages:
         - task: PowerShell@2
           inputs:
             targetType: 'inline'
-            script: |
-              $(flutterExecPath) pub uploader add lhh0900@gmail.com
+            workingDirectory: '$(Build.SourcesDirectory)/device_calendar'
+            script: $(flutterExecPath) pub uploader add lhh0900@gmail.com
 
-              [string] $test = Get-Content -Path "~/.pub-cache/credentials.json" -Raw
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: |
+              [string] $test = Get-Content -Path "$(FlutterToolPath)/.pub-cache/credentials.json" -Raw
 
               Write-Host $test
 
