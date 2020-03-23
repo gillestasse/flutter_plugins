@@ -40,7 +40,9 @@ stages:
             targetType: 'inline'
             workingDirectory: $(FlutterToolPath)
             script: |
-              [string] $test = Get-Content -Path "~/.pub-cache/credentials.json" -Raw
+              cd..
+
+              [string] $test = Get-Content -Path "/.pub-cache/credentials.json" -Raw
 
               Write-Host $test
 
