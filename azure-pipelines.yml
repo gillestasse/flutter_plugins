@@ -29,11 +29,11 @@ stages:
             channel: 'stable'
             version: 'latest'
 
-        - task: PowerShell@2
-          inputs:
-            targetType: 'inline'
-            workingDirectory: '$(Build.SourcesDirectory)/device_calendar'
-            script: $(flutterExecPath) pub uploader add lhh0900@gmail.com
+        # - task: PowerShell@2
+        #   inputs:
+        #     targetType: 'inline'
+        #     workingDirectory: '$(Build.SourcesDirectory)/device_calendar'
+        #     script: $(flutterExecPath) pub uploader add lhh0900@gmail.com
 
         - task: PowerShell@2
           inputs:
